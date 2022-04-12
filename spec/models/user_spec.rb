@@ -79,7 +79,6 @@ RSpec.describe User, type: :model do
   end
 
   it 'validates user' do
-  	binding.pry
   	@valid_user         = FactoryBot.create :user, :valid_user
     expect(@valid_user).to be_valid
   end
