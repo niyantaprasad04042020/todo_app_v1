@@ -1,9 +1,8 @@
 class UserMailer < ApplicationMailer
-  default from: "niyantasimplycoach@gmail.com"
- 
-  def signup_confirmation(user)
+  
+  def welcome_email(user)
     @user = user
-    
-    mail to: user.email_id, subject: "Sign Up Confirmation"
+    mail(to: @user.email_id, subject: 'Welcome to My Awesome Site')
   end
+
 end

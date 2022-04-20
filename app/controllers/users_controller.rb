@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def signup
     @user = User.create(user_params)
     if @user.valid?
-      UserMailer.signup_confirmation(@user).deliver
+      UserMailer.welcome_email(@user).deliver_now
       token = encode_token({user_id: @user.id})
       render json: {user: @user, token: token}
     else
